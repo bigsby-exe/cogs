@@ -1,0 +1,8 @@
+{
+    "name": "Auto-secretsanta",
+    "author": ["Bigsby"],
+    "description": "secretsantasecretsanta",
+    "short": "secretsanta.",
+    "tags": ["passive","utilities"],
+    "install_msg": "secretsanta"
+}
