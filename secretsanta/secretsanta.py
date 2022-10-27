@@ -16,8 +16,14 @@ class secretsanta(commands.Cog):
         self.bot = bot
         self.config = Config.get_conf(self, 0xFF526998EE54)
         self.config.register_guild(**self.guild_conf)
+        
+    @commands.group(invoke_without_command=True)
+    @commands.guild_only()
+    async def secretsanta(self, ctx, *, term):
+        """Add term to the Salvatore list."""
+        await ctx.invoke(self.add, term=term)
 
-    @commands.command()
+    @secretsanta.command()
     @commands.guild_only()
     async def join(self, ctx):
         """Add term to the secretsantaatore list."""
@@ -28,7 +34,7 @@ class secretsanta(commands.Cog):
             else:
                 await ctx.send(error("You are already in  Secret Santa 2022."))
 
-    @commands.command()
+    @secretsanta.command()
     @commands.guild_only()
     async def list(self, ctx):
         """List ssusers from the secretsantaatore list."""
@@ -39,7 +45,7 @@ class secretsanta(commands.Cog):
                 ls = humanize_list(["`{}`".format(term) for term in ssusers])
                 await ctx.send(info("ssusers on this server:\n{}".format(ls)))
 
-    @commands.command()
+    @secretsanta.command()
     @commands.guild_only()
     @checks.mod_or_permissions(manage_guild=True)
     async def clear(self, ctx):
