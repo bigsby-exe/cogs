@@ -14,7 +14,7 @@ class secretsanta(commands.Cog):
     def __init__(self, bot):
         """Initialize cog. Set up config."""
         self.bot = bot
-        self.config = Config.get_conf(self, identifier=4265351170, force_registration=True)
+        self.config = Config.get_conf(self, 0xFF526998EE54)
         self.config.register_guild(**self.guild_conf)
 
     @secretsanta.command()
