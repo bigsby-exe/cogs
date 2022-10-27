@@ -26,6 +26,7 @@ class secretsanta(commands.Cog):
     @secretsanta.command()
     @commands.guild_only()
     async def join(self, ctx):
+        user = ctx.author.display_name
         """Add term to the secretsantaatore list."""
         async with self.config.guild(ctx.guild).ssusers() as ssusers:
             if not ctx.author in ssusers:
