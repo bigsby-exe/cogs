@@ -26,11 +26,11 @@ class secretsanta(commands.Cog):
     @secretsanta.command()
     @commands.guild_only()
     async def join(self, ctx):
-        user = ctx.author.display_name
+        user = str(ctx.author.display_name)
         """Add term to the secretsantaatore list."""
         async with self.config.guild(ctx.guild).ssusers() as ssusers:
-            if not ctx.author in ssusers:
-                ssusers.append(ctx.author)
+            if not user in ssusers:
+                ssusers.append(user)
                 await ctx.send(info("You have been added to Secret Santa 2022."))
             else:
                 await ctx.send(error("You are already in  Secret Santa 2022."))
