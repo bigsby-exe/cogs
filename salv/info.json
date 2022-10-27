@@ -1,0 +1,8 @@
+{
+    "name": "Auto-Salvatore",
+    "author": ["Bigsby"],
+    "description": "Configurable list of urls to be replied to.",
+    "short": "Configurable list of spam words to zap.",
+    "tags": ["passive","utilities"],
+    "install_msg": "Salvatore"
+}
